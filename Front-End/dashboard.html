@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dist/CSS/dashboard.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <!-- Logo Area could go here -->
+        <div style="height: 50px;"></div> 
+
+        <ul class="sidebar-menu">
+            <li><a href="" class="active"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
+            <li><a href=""><i class="fa-solid fa-window-restore"></i> Transaction History</a></li>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i> Cards</a></li>
+            <li><a href=""><i class="fa-solid fa-file-invoice"></i> Invoice</a></li>
+            <li><a href=""><i class="fa-solid fa-comment-dots"></i> Live support</a></li>
+            <li><a href=""><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left" style="display: flex; align-items: center;">
+                <h1>Dashboard</h1>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="icon-btn"><i class="fa-regular fa-bell"></i></div>
+                <div class="icon-btn"><i class="fa-solid fa-comment-dots"></i></div>
+                <div class="user-profile">
+                    <!-- Placeholder image -->
+                    <img src="https://ui-avatars.com/api/?name=Derick+Leo&background=random" alt="User">
+                    <span id="user_name">Derick Leo</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Grid -->
+        <div class="dashboard-grid">
+            
+            <!-- Left Column: Balance & Actions -->
+            <div class="left-col">
+                <!-- Balance Card -->
+                <div class="balance-card">
+                    <div class="top-row">
+                        <span>Total Balance <small style="opacity: 0.8; margin-left: 10px;">Savings Account</small></span>
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="balance-amount">N500,000</div>
+                    <div class="refresh-info">
+                        <i class="fa-solid fa-rotate-right"></i> Last refreshed: 28/01/26 . 11h:23m:35s
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div>
+                    <h2 class="section-title">Quick Actions</h2>
+                    <div class="actions-grid">
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                            <span>Loans</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-solid fa-up-down"></i></i></div>
+                            <span>Data</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-regular fa-credit-card"></i></div>
+                            <span>Luno transfer</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-solid fa-bank"></i></div>
+                            <span>Other bank</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                            <span>Airtime</span>
+                        </div>
+                        <div class="action-item">
+                            <div class="icon-circle"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                            <span>Bill payment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Financial Report -->
+            <div class="financial-report">
+                <div class="report-header">
+                    <h2>Financial Report</h2>
+                    <select class="date-dropdown">
+                        <option>January 2026</option>
+                    </select>
+                </div>
+
+                <!-- Pie Chart -->
+                <div class="pie-chart">
+                    <div class="chart-label label-credit">A credit of N86,513 has been received</div>
+                    <div class="chart-label label-debit">Your account has been debited by N83,513</div>
+                </div>
+
+                <p class="report-text">An overview of your credited and debited transactions for the selected timeframe.</p>
+            </div>
+        </div>
+
+        <!-- Transaction History Table -->
+        <div class="transactions">
+            <div class="table-header">
+                <h2>Transaction History</h2>
+                <a href="" class="see-more">See More</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Derick Leo</td>
+                        <td>Kelechi D</td>
+                        <td class="amount-neg">-N10,000</td>
+                        <td class="status-pending">Pending</td>
+                        <td>11-01-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Nkechi Sarah</td>
+                        <td>Derick Leo</td>
+                        <td class="amount-pos">+N50,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td>26-01-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Jack Dike</td>
+                        <td>Nathan Ben</td>
+                        <td class="amount-pos">+N40,000</td>
+                        <td class="status-failed">Failed</td>
+                        <td>19-01-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Brent Obi</td>
+                        <td>Henry Scott</td>
+                        <td class="amount-neg">-N90,000</td>
+                        <td class="status-completed">Completed</td>
+                        <td>21-01-2026</td>
+                    </tr>
+                    <tr>
+                        <td>Clinton Jude</td>
+                        <td>Nicole Ike</td>
+                        <td class="amount-pos">+N20,000</td>
+                        <td class="status-pending">Pending</td>
+                        <td>24-01-2026</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pages">
+                <span>Showing 1-5 of 30 entries</span>
+                <span style="margin-left: auto;">Page 1 of 6</span>
+                <div class="page-num active">1</div>
+                <div class="page-num">2</div>
+                <div class="page-num">3</div>
+                <div class="page-num">></div>
+            </div>
+        </div>
+
+    </main>
+    <script src="https://kit.fontawesome.com/d567acde72.js" crossorigin="anonymous"></script>
+</body>
+<script>
+    const params = new URLSearchParams (window.location.search);
+    const userSession = params.get("usersession");
+    const fetchDetails = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/users/${userSession}`);
+            const data = await response.json();
+            let userProfile = document.getElementById('user_name');
+            userProfile.textContent = `${data.first_name} ${data.last_name}`; // Replace with dynamic data when available
+            console.log(data);
+        } catch (error) {
+            console.error("Error fetching user details:", error);
+        }
+    };
+    fetchDetails();
+
+</script>
+</html>

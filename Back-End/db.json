@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "first_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "960b",
+      "first_name": "Emmanuel",
+      "last_name": "Okereke",
+      "phone_number": "07062494692",
+      "email": "ryanzaq10@gmail.com",
+      "password": "cn22$455"
+    },
+    {
+      "id": "73c3",
+      "first_name": "Emmanuel",
+      "last_name": "Okereke",
+      "phone_number": "07062494692",
+      "email": "ryanzaq10@gmail.com",
+      "password": "cn22$455"
+    },
+    {
+      "id": "1fd6",
+      "first_name": "Emmanuel",
+      "last_name": "Okereke",
+      "phone_number": "07062494692",
+      "email": "ryanzaq10@gmail.com",
+      "password": "cn22$455"
+    }
+  ]
+}

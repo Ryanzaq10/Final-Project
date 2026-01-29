@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="Front-End/dist/CSS/index.css">
+</head>
+<body>
+    <section class="parent">
+        <!-- LEFT SIDE: FORM -->
+        <div class="user-info">
+            <h1>Sign up</h1>
+
+            <form action="" id="form-el">
+                <div class="input-box">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="text" id="phone-number" name="phone_number" required>
+                </div>
+                
+                <div class="input-box">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="input-box password-wrapper">
+                    <label for="password">Password</label>
+                    <!-- Added a container for input + icon positioning -->
+                    <div class="password-input-container">
+                        <input type="password" id="password" name="password" required>
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                
+                <div class="btn-box">
+                    <button type="submit">Continue</button>
+                </div>
+
+                <div class="login-link">
+                    <p>Already have an account? <a href="#">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE: IMAGE -->
+        <div class="bank-img">
+            <!-- Assuming your image contains the illustration -->
+            <img src="Front-End/dist/Images/Frame 337.png" alt="Bank Illustration">
+        </div>
+    </section>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="index.js"></script>
+</html>
