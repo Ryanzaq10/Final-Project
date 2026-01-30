@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="dist/CSS/login.css">
+    <link rel="stylesheet" href="dist/assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-message {
+            border: 2px solid red;
+        }
+    </style>
 </head>
 <body>
     <section class="parent">
         <!-- LEFT SIDE: FORM -->
         <div class="user-info">
+            <!-- Modal for Error -->
+             
             <h1>Log In</h1>
 
-            <form action="" enctype="multipart/form-data" name="form-name">
+            <form action="" id="formEl" name="form-name">
                 <div class="input-box">
-                    <label for="account">Account Number</label>
-                    <input type="text" id="acc-num" name="account" required>
+                    <label for="account">Email</label>
+                    <input type="email" id="acc-num" name="email" required>
                 </div>
                 
                 <div class="input-box password-wrapper">
@@ -35,9 +43,42 @@
 
         <!-- RIGHT SIDE: IMAGE -->
         <div class="bank-img">
-            <img src="Images/Frame 337.png" alt="Bank Illustration">
+            <img src="dist/assets/images/Frame 337.png" alt="Bank Illustration">
         </div>
     </section>
+    <script>
+        const form = document.getElementById("formEl");
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const userEmail = formData.get('email');
+            const userPassword = formData.get('password');
+            try {
+                const response = await fetch(`http://localhost:5000/users?email=${userEmail}&password=${userPassword}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const result = await response.json(); 
+                console.log('Result:', result);
+                if (result.length === 0) {
+                    document.querySelector(".input-box input").classList.add("error-message");
+                    
+                    alert('Invalid email or password. Please try again.');
+                    return; 
+                }else{
+                      document.querySelector(".input-box input").classList.remove("error-message");
+                    let data = result[0].id;
+                    // result = result[0];
+                    console.log('Success:', data);
+
+                // alert('Sign In Successful!. You will be redirected to your dashboard.');
+                location.href = `dashboard.html?usersession=${data}`;
+                }
+                
+            } catch (err) {
+                console.error('Error:', err);
+            }
+        });
+    </script>
 </body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </html>
