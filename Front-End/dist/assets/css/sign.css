@@ -1,0 +1,139 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+/* CENTERING THE PAGE */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff; /* Page background is white */
+    padding: 20px;
+}
+
+/* PARENT CONTAINER */
+.parent {
+    display: flex;
+    width: 1000px;
+    max-width: 95%;
+    background-color: #fff;
+    height: 634px;
+}
+
+/* --- LEFT SIDE --- */
+.user-info {
+    width: 50%;
+    padding: 40px 60px 40px 0; /* Extra padding on right for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center; /* Aligned left per design */
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* INPUT STYLING */
+.input-box {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #111;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #0f765e; /* Green border on click */
+}
+
+/* PASSWORD EYE ICON */
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #000;
+}
+
+/* BUTTON STYLING */
+.btn-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 80%;
+    padding: 15px;
+    background-color: #0f765e; /* The specific dark green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0c5e4b;
+}
+
+/* BOTTOM LINK */
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #0f765e;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* --- RIGHT SIDE --- */
+.bank-img {
+    width: 50%;
+    height: auto;
+    background-color: #e8f3f100; /* The light mint background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bank-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
