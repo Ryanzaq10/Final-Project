@@ -1,139 +1,782 @@
-/* RESET */
+/* Paste the google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Cabin+Condensed&family=Comfortaa:wght@300..700&family=Dancing+Script&family=Epilogue:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost&family=Kalam&family=Kanit&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Display:wght@600&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Odibee+Sans&family=PT+Sans+Narrow&family=Playwrite+ZA+Guides&family=Poetsen+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita+Swashed:wght@300..900&family=Signika+Negative:wght@300..700&family=Slabo+27px&family=Syne:wght@400..800&family=Ubuntu:wght@500&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Yesteryear&display=swap");
+
+
+
+/* Our main css Page  */
+
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
-}
-::-webkit-scrollbar {
-    display: none;
-}
-/* CENTERING THE PAGE */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #ffffff; /* Page background is white */
-    padding: 20px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", "sans-serif";
 }
 
-/* PARENT CONTAINER */
-.parent {
-    display: flex;
-    width: 1000px;
-    max-width: 95%;
-    background-color: #fff;
-    height: 634px;
+/* Our ROOT Selectors */
+:root {
+  --clr-Nav-bar: rgba(255, 255, 255, 1);
+  --clr-Main-Green: rgba(4, 120, 87, 1);
+  --clr-Main-Blue: rgba(14, 165, 233, 1);
+  --clr-Black-Main: #000;
+  --clr-light-green: rgba(129, 187, 171, 1);
 }
 
-/* --- LEFT SIDE --- */
-.user-info {
+/* Sample CSS Figma codes with box-shadows */
+/* .container {
+    box-shadow: 6px 4px 4px 0px rgba(0, 0, 0, 0.25);
+} */
+ .parent{
+  display: none;
+ }
+#loader{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  min-height: 100vh;
+  background: var(--clr-Black-Main);
+  overflow-x: hidden;
+}
+/* Sampl Code - Please remove when coding */
+.loader {
+  transform: translateZ(1px);
+}
+.loader:after {
+  content: '$';
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  line-height:40px;
+  font-size: 32px;
+  font-weight: bold;
+  background: var(--clr-Main-Green);
+  color: var(--clr-light-green);
+  border: 4px double ;
+  box-sizing: border-box;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+  animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes coin-flip {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+      
+.logo {
+  width: 56;
+  height: 30;
+  /* angle: 0 deg; */
+  opacity: 1;
+  margin-left: 130px;
+  margin-top: 30px;
+}
+
+h4 {
+  font-family: Mulish;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  /* leading-trim: NONE; */
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* Navbar link hover effect */
+.navbar-nav .nav-link {
+  position: relative;
+  color: #111;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-link.active {
+  color: #198754;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #198754;
+  transition: width 0.2s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #198754;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+.chevron-transition{
+    transition: transform 0.3s;
+}
+    /* Arrow rotates when dropdown is open */
+#investorDropdown[aria-expanded="true"] .fa-chevron-down{
+transform: rotate(-180deg);
+}
+/* Show dropdown on hover for navbar */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  animation: fadeIn 0.3s;
+}
+.navbar-nav .dropdown:hover .fa-chevron-down {
+  transform: rotate(-180deg);
+  transition: transform 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Carousel Container */
+
+#homeSection{
+    background-color: linear-gradient(rgba(31, 30, 30, 0.4), rgba(31, 30, 30, 0.4));
+}
+.carousel-item img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+   filter: brightness(50%);
+}
+/* Captions */
+.carousel-caption {
+  position: absolute;
+bottom: 20%;
+  text-align: center;
+  /* padding: 50px 0; */
+}
+.carousel-caption h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+.carousel-caption p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.carousel-caption .btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background: var(--clr-Main-Green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  margin: 20px;
+}
+.carousel-caption .btn:hover {
+  background: #444;
+} /* Indicators */
+.carousel-indicators {
+  position: static;
+  margin-top: 40px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+.carousel-indicators #dot {
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+.carousel-indicators #dot.active {
+  background-color: var(--clr-Main-Green);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-caption {
+    bottom: 50%;
+    left: 5%;
+    max-width: 90%;
+    top: 0;
+  }
+  .carousel-item{
+    height: 100vh;
+  }
+  .carousel-caption .btn{
+      margin: 0;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+
+  .payDay_Loan{
+    padding: 10px 15px;
+  }
+  .instant_btn button{
     width: 50%;
-    padding: 40px 60px 40px 0; /* Extra padding on right for spacing */
+  }
+  .payDayTxt p{
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: left;
+}
+}
+
+/* NEW CSS FOR PAY DAY */
+.payDay_Loan{
+    background: var(--clr-Main-Green);
+    color: #fff;
+}
+
+.payDayContainer_main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 45px 0;
+    flex-wrap: wrap;
 }
-
-h1 {
-    text-align: center; /* Aligned left per design */
-    margin-bottom: 30px;
-    font-weight: 600;
-    color: #111;
-}
-
-/* INPUT STYLING */
-.input-box {
+.payDayTxt{
     margin-bottom: 20px;
-    width: 100%;
 }
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #111;
-    font-weight: 500;
-    font-size: 15px;
+.payDayTxt p{
+    font-size: 1.2rem;
+    line-height: 2;
 }
-
-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0; /* Light gray border */
-    border-radius: 6px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #0f765e; /* Green border on click */
-}
-
-/* PASSWORD EYE ICON */
-.password-input-container {
-    position: relative;
-    width: 100%;
-}
-
-.password-input-container i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #000;
-}
-
-/* BUTTON STYLING */
-.btn-box {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-button {
+.instant_btn button{
     width: 80%;
-    padding: 15px;
-    background-color: #0f765e; /* The specific dark green */
-    color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0c5e4b;
-}
-
-/* BOTTOM LINK */
-.login-link {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-
-.login-link a {
-    color: #0f765e;
-    text-decoration: underline;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 1);
     font-weight: 600;
+    padding: 10px 0;
+}
+.service {
+  background: rgb(238, 236, 236);
+  padding: 30px 30px;
 }
 
-/* --- RIGHT SIDE --- */
-.bank-img {
-    width: 50%;
+.service .serv {
+  text-align: center;
+  /* width: 284;
+height: 60;
+left: 621px; */
+  /* angle: 0 deg; */
+  opacity: 1;
+  font-family: Mulish;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 42px;
+  /* leading-trim: NONE; */
+  /* line-height: 100%;
+letter-spacing: 0%; */
+  margin-bottom: 10px;
+}
+
+/* Custom styles for Payday Loan section titles (moved from inline styles in index.html) */
+.payday-title {
+  margin: 15px 0;
+}
+
+.payday-salary {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  text-align: center;
+  position: relative;
+  left: -25px;
+  /* padding: ; */
+}
+
+.card img {
+  width: 100%;
+}
+
+.head {
+  margin: 20px 0;
+  margin-left: 20px;
+}
+
+.read {
+  /* width: 100%; */
+  opacity: 1;
+  border-radius: 5px;
+  background: #047857;
+  border: none;
+  color: white;
+  padding: 10px 0;
+  /* margin-left: 20px; */
+  margin: 20px 10px;
+  font-size: 15px;
+}
+
+.recom {
+  background: var(--clr-light-green);
+  padding: 30px 40px 30px 55px;
+}
+
+.you {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  place-content: center;
+  position: relative;
+  /* left: -30px; */
+}
+
+.your {
+  background: white;
+  border-radius: 10px;
+  /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+  padding-bottom: 10px;
+}
+
+.your img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.your p {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-family: Mulish;
+}
+
+/* Footer Section */
+.footer-section {
+  background: #064e3b;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #fbc02d;
+  /* gold hover */
+}
+
+.footer-link {
+  font-weight: bold;
+  color: #fbc02d;
+  /* highlight FAQ */
+}
+
+.footer-section i {
+  margin-right: 6px;
+}
+
+/* Media Querry */
+@media screen and (min-width: 0) and (max-width: 750px) {
+  .you {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    left: 0;
+  }
+
+  .cards {
+    text-align: center;
+    width: 100%;
+  }
+
+  .cards > .card {
+    margin: 15px 0;
+  }
+  .card{
+    left: 0;
+  }
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #fbc02d;
+  /* gold hover */
+}
+
+.footer-link {
+  font-weight: bold;
+  color: #fbc02d;
+  /* highlight FAQ */
+}
+
+.footer-section i {
+  margin-right: 6px;
+}
+
+/* Responsive styles for carousel */
+@media screen and (max-width: 700px) {
+  .carousel-item {
+    height: 40vh;
+  }
+
+  .carousel-caption {
+    padding: 10px;
     height: auto;
-    background-color: #e8f3f100; /* The light mint background color */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* height: 80%; */
+    flex-direction: column;
+    font-size: 16px;
+  }
 }
 
-.bank-img img {
+.carousel h3 {
+  font-size: 1.1rem;
+}
+
+.carousel .we {
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.acc {
+  /* position: static; */
+  width: 100px;
+  margin: 10px;
+  padding: 5px 0;
+  font-size: 1rem;
+  display: block;
+}
+
+.carousel-item img {
+  height: 40vh;
+  object-fit: cover;
+}
+
+.carousel-indicators button {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+}
+
+.pay .amt {
+  position: absolute;
+  top: 930px;
+  left: 800px;
+}
+
+/* .parent .pay {
+    padding: 30px 0;
+} */
+
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  .carousel-item {
+    height: 55vh;
+  }
+
+  .carousel-caption {
+    padding: 18px;
+    height: auto;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .we {
+    font-size: 1.1rem;
+    margin-top: 14px;
+  }
+
+  .acc {
+    position: static;
+    width: 100px;
+    margin: 12px auto 0 auto;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  .carousel-item img {
+    height: 55vh;
+    object-fit: cover;
+  }
+
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 700px) {
+  .navcon {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .logo {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 40px;
+    height: 22px;
+  }
+
+  nav {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .pay .img {
+    width: 60%;
+    margin-left: 130px;
+  }
+  .pay .amt {
+    position: absolute;
+    left: 250px;
+    top: 1050px;
+  }
+  .cards {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+
+  .card {
+    width: 75vw;
+    min-width: 0;
+  }
+
+  .card img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+  }
+
+  .you {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .your {
+    width: 75vw;
+    min-width: 0;
+    padding-bottom: 8px;
+  }
+
+  .your img {
+    width: 100%;
+    height: auto;
+  }
+
+  .down {
+    flex-direction: column;
+    padding: 20px 10px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .pay {
+    flex-direction: column;
+    padding: 20px 10px 0 20px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .service {
+    padding: 15px 0;
+    height: auto;
+  }
+
+  .serv {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .day {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive styles for tablets */
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  .navcon {
+    width: 100vw;
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .logo {
+    margin-left: 40px;
+    margin-top: 15px;
+    width: 48px;
+    height: 26px;
+  }
+
+  nav {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  nav ul {
+    gap: 16px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .pay {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    height: 170vh;
+  }
+  /* .pay .get{
+        margin-bottom: 30px;
+    } */
+
+  .rub {
+    width: 50%;
+  }
+  .pay .img {
+    width: 50%;
+    margin-left: 220px;
+  }
+  .payAbout {
+    margin-bottom: 0;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-left: 25px;
+  }
+
+  .card {
+    width: 45vw;
+    min-width: 0;
+  }
+
+  .card img {
+    width: 45vw;
+    height: auto;
+  }
+
+  .you {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .your {
+    width: 45vw;
+    min-width: 0;
+    padding-bottom: 8px;
+  }
+
+  .your img {
+    width: 100%;
+    height: auto;
+  }
+
+  .down {
+    flex-direction: column;
+    padding: 30px 20px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  /* .pay {
+        flex-direction: column;
+        padding: 30px 20px 0 20px;
+        text-align: center;
+    } */
+
+  .service {
+    padding: 20px 0;
+    height: auto;
+  }
+
+  .serv {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .pay .amt {
+    position: absolute;
+    top: 1430px;
+    left: 400px;
+  }
+
+  .day {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .acc {
+    margin: 20px;
+  }
+}
+.payday-title {
+  margin: 15px 0;
+}
+
+.payday-salary {
+  margin: 15px 0;
+  text-align: center;
 }

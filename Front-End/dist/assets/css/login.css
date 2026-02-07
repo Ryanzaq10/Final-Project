@@ -83,6 +83,14 @@ input:focus {
     border-color: #0f765e; /* Green border on click */
 }
 
+.forgot_pass {
+    text-decoration: none;
+    color: grey;
+}
+.forgot_pass:hover {
+    color: #0f765e;
+}
+
 /* BUTTON STYLING */
 .btn-box {
     margin-top: 30px;
@@ -106,6 +114,17 @@ button:hover {
     background-color: #0c5e4b;
 }
 
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.signup-link a {
+    color: #0f765e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 /* --- RIGHT SIDE --- */
 .bank-img {
     width: 50%;
@@ -119,4 +138,64 @@ button:hover {
 .bank-img img {
     width: 100%;
     height: 100%;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    body {
+        display: block;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .parent {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 40px; 
+    }
+
+    .bank-img {
+        display: none;
+    }
+
+    .user-info {
+        width: 100%;
+        padding: 24px; 
+        display: block;
+    }
+
+    h1 {
+        padding-bottom: 20px;
+        font-size: 28px;
+        margin-top: 20px;
+    }
+
+    .input-box {
+        margin-bottom: 24px;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        padding: 14px 16px; 
+        border: 1px solid #eaeaea; 
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .btn-box {
+        margin-top: 40px;
+    }
+
+    button {
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 17px;
+    }
 }
